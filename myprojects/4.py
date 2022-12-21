@@ -3,13 +3,11 @@
 from moneyfmt import moneyfmt
 from decimal import *
 def dollarize(d):
-    # if isinstance(dollar, float):
-    # dollar = abs(d)
+
     new_d = Decimal(str(d))
     dollars = moneyfmt(abs(new_d), curr='$')
     return dollars
 
-    # return f"python${str(dollar).rjust(3, ',')}"
 dollarize(123456.78901)
 dollarize(-123456.7801)
 dollarize(1000000)
@@ -25,8 +23,7 @@ class MoneyFmt:
 
     def __repr__(self):
         return repr(self.amount)
-
-    # @dollarize
+    
     def __str__(self):
         return f'{dollarize(self.amount)}'
 
